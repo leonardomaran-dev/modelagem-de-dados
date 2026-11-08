@@ -1,4 +1,4 @@
-# Projeto Integrado - Desenvolvimento de Sistemas
+# Projeto Integrado - Modelagem de Dados
 
 ## Estudantes:
 
