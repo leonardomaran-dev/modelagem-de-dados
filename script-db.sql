@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS condomino (
     cidade VARCHAR(50) NOT NULL,
     estado CHAR(2) NOT NULL,
     PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- ------------------------------------------------------------
 -- 2. TABELA: BLOCO
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS bloco (
         REFERENCES condomino(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- ------------------------------------------------------------
 -- 3. TABELA: UNIDADE
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS unidade (
         REFERENCES bloco(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- ------------------------------------------------------------
 -- 4. TABELA: USUARIO
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS usuario (
     telefone VARCHAR(20) NULL,
     avatar VARCHAR(255) NULL,
     PRIMARY KEY (id)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- ------------------------------------------------------------
 -- 5. TABELA: MORADOR
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS morador (
         REFERENCES usuario(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- ------------------------------------------------------------
 -- 6. TABELA: VISITANTE
@@ -100,14 +100,14 @@ CREATE TABLE IF NOT EXISTS visitante (
         REFERENCES unidade(id)
         ON DELETE CASCADE
         ON UPDATE CASCADE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+);
 
 -- ------------------------------------------------------------
 -- CARGA INICIAL DE DADOS DE TESTE (SEED)
 -- ------------------------------------------------------------
 
 INSERT INTO condomino (nome, logo, rua, numero, bairro, cidade, estado) VALUES
-('Condomínio Residenziale AttendIA', 'logo_attendia.png', 'Av. Central', '1000', 'Centro', 'São Paulo', 'SP');
+('Condomínio AttendIA', 'logo_attendia.png', 'Av. Central', '1000', 'Centro', 'São Paulo', 'SP');
 
 INSERT INTO bloco (id_condominio, nome) VALUES
 (1, 'Bloco A'),
